@@ -1,0 +1,9 @@
+openai>=2.8.0
+pandas
+streamlit
+python-dotenv
+scipy
+matplotlib
+seaborn
+openai-agents>=0.6.0
+eval-type-backport

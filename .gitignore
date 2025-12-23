@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# Streamlit
+.streamlit/
+
+# Environment
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+pandasai.log
+
+# Exports (keep structure, ignore large files)
+exports/charts/*.png
+exports/charts/*.jpg
+exports/charts/*.pdf
+
+# Documentation outputs (keep markdown, ignore generated)
+CODE_DOCUMENTATION.pdf
+CODE_DOCUMENTATION.html
+
+# Python cache
+*.egg-info/
+dist/
+build/
