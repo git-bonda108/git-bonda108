@@ -2,6 +2,10 @@
 
 A powerful, enterprise-grade data analysis platform powered by **OpenAI Agents SDK**, featuring specialized AI agents for comprehensive data analysis, visualization, and statistical insights.
 
+## 🚀 Resume Description (3 Lines)
+
+**Multi-Agent Data Analysis System** - Developed an AI-powered data analysis platform using OpenAI Agents SDK with 5 specialized agents (Analysis, Statistical, Visualization, Formatting, Orchestrator) that process natural language queries to perform complex data operations, statistical analysis, and generate visualizations. Built with Streamlit, Python, and pandas, featuring SQL-like query support, correlation analysis, hypothesis testing, and automated table formatting. Implements session state management, error handling, and modular architecture for scalable data analysis workflows.
+
 ## 🎯 Features
 
 ### ✨ Multi-Agent Architecture
