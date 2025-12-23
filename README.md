@@ -4,7 +4,11 @@ A powerful, enterprise-grade data analysis platform powered by **OpenAI Agents S
 
 ## 🚀 Resume Description (3 Lines)
 
-**Multi-Agent Data Analysis System** - Developed an AI-powered data analysis platform using OpenAI Agents SDK with 5 specialized agents (Analysis, Statistical, Visualization, Formatting, Orchestrator) that process natural language queries to perform complex data operations, statistical analysis, and generate visualizations. Built with Streamlit, Python, and pandas, featuring SQL-like query support, correlation analysis, hypothesis testing, and automated table formatting. Implements session state management, error handling, and modular architecture for scalable data analysis workflows.
+**Multi-Agent Data Analysis System** - Developed an AI-powered data analysis platform using OpenAI Agents SDK with 5 specialized agents (Analysis, Statistical, Visualization, Formatting, Orchestrator) that process natural language queries to perform complex data operations, statistical analysis, and generate visualizations.
+
+Built with Streamlit, Python, and pandas, featuring SQL-like query support, correlation analysis, hypothesis testing, and automated table formatting with comprehensive error handling and session state management.
+
+Implements modular architecture with specialized tool modules for data manipulation, statistical analysis, visualization, and formatting, enabling scalable data analysis workflows deployed on Streamlit Cloud.
 
 ## 🎯 Features
 
@@ -71,6 +75,116 @@ python -m streamlit run data-insights.py
 ```
 
 The app will open at `http://localhost:8501`
+
+## 📦 Streamlit Cloud Deployment
+
+### Option 1: Deploy via Streamlit Cloud (Recommended)
+
+1. **Push to GitHub** (already done):
+   - Repository: `https://github.com/git-bonda108/git-bonda108`
+
+2. **Go to Streamlit Cloud**:
+   - Visit: https://share.streamlit.io/
+   - Sign in with GitHub
+
+3. **Deploy App**:
+   - Click "New app"
+   - Select repository: `git-bonda108/git-bonda108`
+   - Main file path: `data-insights.py`
+   - Branch: `main`
+
+4. **Configure Secrets**:
+   - Go to "Settings" → "Secrets"
+   - Add your OpenAI API key:
+     ```
+     OPENAI_API_KEY=your-openai-api-key-here
+     ```
+
+5. **Deploy**:
+   - Click "Deploy"
+   - Your app will be live at: `https://your-app-name.streamlit.app`
+
+### Option 2: Deploy via Streamlit CLI
+
+```bash
+# Install Streamlit CLI (if not already installed)
+pip install streamlit
+
+# Login to Streamlit Cloud
+streamlit login
+
+# Deploy from your local directory
+cd data-analyzer
+streamlit deploy data-insights.py
+```
+
+### Option 3: Manual Deployment Script
+
+Create a deployment script `deploy.sh`:
+
+```bash
+#!/bin/bash
+# Deploy to Streamlit Cloud
+
+# Ensure you're in the right directory
+cd data-analyzer
+
+# Check if streamlit is installed
+if ! command -v streamlit &> /dev/null; then
+    echo "Installing Streamlit..."
+    pip install streamlit
+fi
+
+# Login (if not already logged in)
+streamlit login
+
+# Deploy
+streamlit deploy data-insights.py --name "multi-agent-data-analyzer"
+```
+
+Make it executable and run:
+```bash
+chmod +x deploy.sh
+./deploy.sh
+```
+
+### Environment Variables for Deployment
+
+When deploying, ensure these are set in your deployment platform:
+
+- `OPENAI_API_KEY`: Your OpenAI API key (required)
+- `STREAMLIT_SERVER_PORT`: Port number (default: 8501)
+- `STREAMLIT_SERVER_ADDRESS`: Server address (default: localhost)
+
+### Deployment Checklist
+
+- [x] Code pushed to GitHub
+- [ ] Streamlit Cloud account created
+- [ ] Repository connected to Streamlit Cloud
+- [ ] OpenAI API key added to secrets
+- [ ] App deployed and tested
+- [ ] Public URL shared
+
+### Post-Deployment
+
+After deployment, your app will be accessible at:
+- **Streamlit Cloud**: `https://your-app-name.streamlit.app`
+- Share this URL to allow others to use your application
+
+### Troubleshooting Deployment
+
+**Issue: App fails to start**
+- Check that `requirements.txt` has all dependencies
+- Verify OpenAI API key is set in secrets
+- Check Streamlit Cloud logs for errors
+
+**Issue: Import errors**
+- Ensure all dependencies are in `requirements.txt`
+- Check Python version compatibility (3.9+)
+
+**Issue: API key not found**
+- Verify secrets are configured correctly
+- Check that `.env` file is not needed (use Streamlit secrets instead)
 
 ## 📁 Project Structure
 
